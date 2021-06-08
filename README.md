@@ -6,13 +6,31 @@ Sorts a given text file with a list of names and outputs a list of those names, 
 
 ### Running the program
 
-To run the program, simply navigate to the *NameSorter\bin\Debug\netcoreapp3.1* folder in your desired shell, and run the code below. Note that a path to a valid text file must be supplied. *unsorted-names-list.txt* is not supplied. 
+To run the program, download the files in the repository and build a solution in Visual Studio. Navigate to the folder where the *NameSorter.exe* was built in your preferred shell and run the command below, with a file path to the text file to be sorted as an argument.  
 
 ```
-NameSorter.exe ./unsorted-names-list.txt
+NameSorter ./your-names-file.txt
 ```
 
-The text file should include a list of names, separated by new lines. Each name must have at least one given name and one last name. Names should be separated by spaces.
+Note that a path to a valid text file must be supplied. The text file should include a list of names, separated by new lines. Each name must have at least one given name and one last name. Names should be separated by spaces.
+
+### Running the program with a defined sort order
+
+If you wish to define the type of sort you wish to use, you can supply the following characters as a second argument after the file path to the text file.
+
+```
+a - sorts the text file in ascending alphabetical order.
+d - sorts the text file in descending alphabetical order.
+```
+
+Example input for sorting a names text file in descending alphabetical order, in your chosen shell:
+
+```
+NameSorter ./names-file.txt d
+```
+
+If the sort order is omitted, the program will sort the names into ascending alphabetical order by default.
+
 
 ### Setting up the project locally
 
