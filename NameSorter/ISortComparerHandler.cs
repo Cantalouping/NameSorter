@@ -4,9 +4,8 @@ using System.Text;
 
 namespace NameSorter
 {
-    interface ISortComparerHandler
+    public interface ISortComparerHandler
     {
-        IComparer<Person> SetComparer(string choice);
-        IComparer<Person> DefaultComparer();
+        IComparer<Person> GetComparer();
     }
 }

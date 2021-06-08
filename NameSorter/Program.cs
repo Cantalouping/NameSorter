@@ -24,8 +24,8 @@ namespace NameSorter
 
             ISourceReader input = new FileReader(args[0]);
             ISourceWriter output = new FileWriter("sorted-names-list.txt");
-            IComparer<Person> comparer = new AlphabeticalAscendingComparer();
-            Sorter sorter = new Sorter(input, output, comparer);
+            ISortComparerHandler handler = new SortComparerHandler(args[1]);
+            Sorter sorter = new Sorter(input, output, handler.GetComparer());
 
             string sortedFile = sorter.Sort();
             Console.Write(sortedFile);
