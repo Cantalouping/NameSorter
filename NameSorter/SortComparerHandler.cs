@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NameSorter
 {
-    class SortComparerHandler : ISortComparerHandler
+    public class SortComparerHandler : ISortComparerHandler
     {
         private IComparer<Person> comparer;
 
