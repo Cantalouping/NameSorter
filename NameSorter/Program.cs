@@ -15,6 +15,8 @@ namespace NameSorter
         /// <param name="args">First argument is used to determine the path of the unsorted .txt file. Other arguments ignored.</param>
         static void Main(string[] args)
         {
+            string sortChoice = "";
+
             // Checks that a file path for a txt file of names has been supplied.
             if (args.Length == 0)
             {
@@ -22,9 +24,14 @@ namespace NameSorter
                 return;
             }
 
+            if (args.Length > 1)
+            {
+                sortChoice = args[1];
+            }
+
             ISourceReader input = new FileReader(args[0]);
             ISourceWriter output = new FileWriter("sorted-names-list.txt");
-            ISortComparerHandler handler = new SortComparerHandler(args[1]);
+            ISortComparerHandler handler = new SortComparerHandler(sortChoice);
             Sorter sorter = new Sorter(input, output, handler.GetComparer());
 
             string sortedFile = sorter.Sort();

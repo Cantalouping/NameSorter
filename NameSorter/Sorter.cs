@@ -12,6 +12,7 @@ namespace NameSorter
         private readonly ISourceWriter output;
         private readonly IComparer<Person> comparer;
         private List<Person> names;
+
         public Sorter(ISourceReader input, ISourceWriter output, IComparer<Person> comparer)
         {
             this.input = input;
